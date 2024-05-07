@@ -1,7 +1,7 @@
 dyn_obj:
-    points_topic: "/cloud_registered_body"
-    odom_topic: "/aft_mapped_to_init"
-    frame_id: "camera_init"
+    points_topic: "/laser_cloud" # R3LIVE: /laser_cloud FAST_LIO: /cloud_registered_body
+    odom_topic: "/aft_mapped_to_init" # R3LIVE: /aft_mapped_to_init FAST_LIO: /Odometry
+    frame_id: "world" # R3LIVE: world FAST_LIO: camera_init
     pc_topic: "/livox/lidar"
 
     dataset: 4 #0 for kitti, 1 for nuscenes, 2 for waymo
@@ -87,12 +87,12 @@ dyn_obj:
     debug_x: 7.2065
     debug_y: -3.1844
     debug_z: -0.89005
-    cluster_coupled: true
-    cluster_future: true
+    cluster_coupled: true # default: true
+    cluster_future: true # default: true
     cluster_extend_pixel: 3
     cluster_min_pixel_number: 1
     cluster_thrustable_thresold: 0.1
-    cluster_Voxel_revolusion: 0.1
+    cluster_Voxel_revolusion: 1.0 # default: 0.1
 
 
     dyn_filter_en: true
